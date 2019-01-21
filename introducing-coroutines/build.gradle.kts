@@ -6,9 +6,6 @@ plugins {
     kotlin("jvm") version "1.3.11"
 }
 
-
-
-
 group = "chapter2"
 version = "1.0-SNAPSHOT"
 
@@ -18,14 +15,14 @@ repositories {
 
 dependencies {
     compile(kotlin("stdlib-jdk8"))
-    compile(kotlin ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0"))
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0")
     testCompile("junit", "junit", "4.12")
 }
 
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
-
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
